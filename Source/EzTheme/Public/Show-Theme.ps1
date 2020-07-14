@@ -29,7 +29,7 @@ function Show-Theme {
 
         foreach ($Theme in $Themes) {
             if ($IncludeModule) {
-                foreach ($themedModule in @($Theme.Keys)) {
+                foreach ($themedModule in @($Theme.Modules)) {
                     if ($IncludeModule.ForEach({
                             $_ -eq $ThemedModule -or
                             $_ -like $ThemedModule -or
@@ -41,9 +41,9 @@ function Show-Theme {
                     }
                 }
             }
-            foreach ($module in $Theme.Keys) {
+            foreach ($module in $Theme.Modules) {
                 Write-Host "$module $($Theme.Name) theme:"
-                $Theme[$module] | Out-Default
+                $Theme[$module] # | Out-Default
             }
         }
     }

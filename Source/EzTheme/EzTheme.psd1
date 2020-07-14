@@ -19,6 +19,7 @@
     } # End of PrivateData hashtable
 
     Description = 'Wrappers for PowerShell themes'
+    ScriptsToProcess     = @("IPathInfo.ps1")
     FunctionsToExport    = @()
     CmdletsToExport      = @()
     VariablesToExport    = @()
@@ -26,6 +27,8 @@
     NestedModules        = @()
     RequiredModules      = @(
         @{ModuleName = "Configuration"; ModuleVersion = "1.4.0"}, "PANSIES")
+    TypesToProcess       = @('EzTheme.types.ps1xml')
+    FormatsToProcess     = @('EzTheme.format.ps1xml')
 
     # Script module or binary module file associated with this manifest.
     RootModule           = 'EzTheme.psm1'
